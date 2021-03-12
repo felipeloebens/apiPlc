@@ -1,0 +1,35 @@
+{
+  "config": {
+    "port": "8080"
+  },
+  "name": "supervisorio",
+  "description": "Routine to communicate with Siemens S7 PLCs",
+  "version": "0.0.1",
+  "author": {
+    "name": "Felipe Augusto Loebens",
+    "email": "felipe.loebens@gmail.com"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "S7",
+    "Siemens",
+    "PLC",
+    "RFC1006",
+    "iso-on-tcp"
+  ],
+  "main": "index.js",
+  "engine": "node 10.x.x",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.2.3",
+    "consign": "^0.1.6",
+    "express": "^4.17.1",
+    "express-json-cache": "^2.0.0",
+    "fs": "0.0.1-security",
+    "nodes7": "^0.3.12"
+  }
+}
