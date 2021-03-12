@@ -1,0 +1,22 @@
+{
+    "motores": {
+        "tipoMotores": {
+            "name":"TipoMotor",
+            "replace": [" ", ""],
+            "slice": [0, -1]
+        },
+        "tagsMotores": "TagsMotor",
+        "statusMotores": "StatusMotor",
+        "dadosMotores": "DadosMotorString",
+        "correnteNominalMotores": "StringCorrenteNom",
+        "potenciaNominalMotores": "StringkW",
+        "correnteMotores": "CorrenteMotores",
+        "sensoresMotores": "StringSensores"
+    },
+    "valvulas": {
+        "tagsValvulas": "TipoPneumatico",
+        "dadosValvulas": "DadosPneumaticoString",
+        "statusValvulas": "StatusPneumatico",
+        "tipoValvulas": "TipoPneumatico"
+    }
+}
