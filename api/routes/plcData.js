@@ -1,31 +1,12 @@
-module.exports = app => {
-  const controller = app.controllers.plcData;
+const router = require("express").Router();
+const controller = require("../controllers/PlcController");
 
-  app.route('/api/dadosMotores')
-    .get(controller.listPlcDataMotores);
+router.get('/api/dadosMotores', controller.listPlcDataMotores);
+router.get('/api/dadosValvulas', controller.listPlcDataValvulas);
+router.get('/api/rotas', controller.listPlcDataRotas);
+router.get('/api/dadosMultimedidores', controller.listPlcDataMultimedidores);
+router.get('/api/gerenciador/:id', controller.listPlcDataGer);
 
-  app.route('/api/dadosValvulas')
-    .get(controller.listPlcDataValvulas);
-  
-  app.route('/api/rotas')
-    .get(controller.listPlcDataRotas);
+controller.connect();
 
-  app.route('/api/dadosMultimedidores')
-    .get(controller.listPlcDataMultimedidores);
-
-  app.route('/api/gerenciador1')
-    .get(controller.listPlcDataGer1);
-
-  app.route('/api/gerenciador2')
-    .get(controller.listPlcDataGer2);
-
-  app.route('/api/gerenciador3')
-    .get(controller.listPlcDataGer3);
-
-  app.route('/api/gerenciador4')
-    .get(controller.listPlcDataGer4);
-
-  app.route('/api/gerenciador5')
-    .get(controller.listPlcDataGer5);
-    
-}
+module.exports = router;
