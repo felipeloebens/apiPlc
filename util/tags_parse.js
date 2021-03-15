@@ -1,14 +1,16 @@
 const tagsConfig = require("../api/data/tags_config.json");
 
-function parseTags(plcValues = {}) {
+function parseTags(plcValues, obj) {
+    obj = obj || tagsConfig;
+
     if (!plcValues) {
         return {};
     }
 
     let result = {};
 
-    for (const name in tagsConfig) {
-        const tag = tagsConfig[name];
+    for (const name in obj) {
+        const tag = obj[name];
 
         if (!tag) continue;
 
@@ -23,10 +25,14 @@ function parseTags(plcValues = {}) {
                 }
                 result[name] = value;
             } else {
-                result[name] = parseTags(tag, plcValues);
+                result[name] = parseTags(plcValues, tag);
             }
         } else if (typeof tag == "string") {
-            result[name] = plcValues[tag].toString();
+            if (isNaN(name)){
+                result[name] = plcValues[tag] + "";
+            }else{
+                result[tag] = plcValues[tag] + "";
+            }
         }
     }
 
